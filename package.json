@@ -1,0 +1,61 @@
+{
+  "name": "playwright-typescript",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "is-ci || husky install",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "tests:headed": "npx playwright test --config playwright.config.ts --project=chrome-headed --workers=1",
+    "tests:headless": "npx playwright test --config playwright.config.ts --project=chrome --workers=1",
+    "tests:r9int:headed:chrome:allure": "env-cmd -f .env.r9int npx playwright test --config playwright.config.ts --project=chrome-headed --workers=1",
+    "tests:r9int-java17:headed:chrome:allure": "env-cmd -f .env.r9int.java17 npx playwright test --config playwright.config.ts --project=chrome-headed --workers=1",
+    "tests:r9int:headed:chrome:allure:debug": "env-cmd -f .env.r9int npx playwright test --debug --config playwright.config.ts --project=chrome-headed --workers=1",
+    "tests:r9int:headed:chrome::sample:case": "env-cmd -f .env.r9int npx playwright test tests/brazil-compliance/test_C7379229_C7379494_SetupMenuItem.spec.ts --config playwright.config.ts --project=chrome-headed",
+    "allure:report": "npx allure generate ./allure-results --clean && npx allure open ./allure-report"
+  },
+  "keywords": [],
+  "author": "Wall-E",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "@playwright/test": "^1.57.0",
+    "@reportportal/agent-js-playwright": "^5.1.11",
+    "@stylistic/eslint-plugin": "4.2.0",
+    "@types/node": "22.13.14",
+    "@types/node-fetch": "^2.6.4",
+    "@types/uuid": "^9.0.7",
+    "@typescript-eslint/eslint-plugin": "8.29.0",
+    "@typescript-eslint/parser": "8.29.0",
+    "allure-playwright": "^3.2.1",
+    "env-cmd": "^10.1.0",
+    "eslint": "^9.38.0",
+    "eslint-plugin-playwright": "^2.2.0",
+    "husky": "9.1.7",
+    "is-ci": "^4.1.0",
+    "lint-staged": "15.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "5.8.2",
+    "typescript-eslint": "^8.46.2"
+  },
+  "dependencies": {
+    "@quality-growth/playwright-platform-develop-tk": "^1.44.0-develop-tk.20260327064513",
+    "@visual-regression-tracker/agent-playwright": "5.3.1",
+    "axios": "^1.11.0",
+    "csv-parse": "^5.6.0",
+    "date-fns": "^4.1.0",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.7",
+    "eslint-plugin-import": "2.31.0",
+    "mailinator-client": "1.0.5",
+    "node-fetch": "^2.6.12",
+    "xlsx": "0.18.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,md,yml}": [
+      "eslint --fix"
+    ]
+  }
+}

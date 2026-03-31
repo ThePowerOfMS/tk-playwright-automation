@@ -1,0 +1,14 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+*allure_results
+*allure-results
+*allure-report
+trace.zip
+dist/
+test-data/local.cred.env
+# Environments
+.env
+.idea

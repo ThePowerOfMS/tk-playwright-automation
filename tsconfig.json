@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["ESNext", "DOM"],
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "paths": {
+      "@hcm-pages": ["./node_modules/@quality-growth/playwright-platform-develop-tk/page-objects/hcm/dist/pages"],
+      "@wfm-pages": ["./node_modules/@quality-growth/playwright-platform-develop-tk/page-objects/wfm/dist/pages"],
+      "@suite-pages": ["./node_modules/@quality-growth/playwright-platform-develop-tk/page-objects/suite/dist/pages"],
+      "@utils": ["./node_modules/@quality-growth/playwright-platform-develop-tk/utils/dist/utils"],
+      "@data-manager": ["./node_modules/@quality-growth/playwright-platform-develop-tk/utils/dist/utils/data-manager"]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "tests/**/*.ts",
+    "playwright.config.ts",
+    "test-data/**/*.ts",
+    "globalTeardown.ts",
+    "globalSetup.ts",
+    "api/**/*.ts",
+    "utils/**/*.ts",
+    "scripts/**/*.ts",
+    "data/**/*.ts"
+, "test-data/r9int.env", "test-data/local.env", "test-data/local.cred.env"  ],
+  "exclude": ["node_modules", "dist"]
+}
